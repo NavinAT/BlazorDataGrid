@@ -1,0 +1,48 @@
+﻿
+<div class="@BuildContainerStyle()">
+    <CascadingValue Value="this">
+        @ChildContent
+        <table class="@BuildGridStyle()">
+            <colgroup>
+                @foreach(DataGridColumn column in this.Columns)
+                {
+                    <col class="cheatsheet-col" style="width: @column.CellWidth"px>
+                }
+            </colgroup>
+            <thead>
+            <tr class="datagrid-header-row">
+                @foreach(DataGridColumn column in this.Columns)
+                {
+                    <th class="datagrid-header-cell">
+                        <span class="fieldvalue datagrid-fieldvalue">@column.Caption</span>
+                    </th>
+                }
+            </tr>
+            </thead>
+            <tbody>
+            @if(this.DataSource == null)
+            {
+                <p>Loading...</p>
+            }
+            else
+            {
+                @foreach(Subject sub in this.DataSource) // TODO: Need to write with generic object
+                {
+                    <DataGridRow Value="sub" EditMode="@EditMode"></DataGridRow>
+                }
+            }
+            </tbody>
+        </table>
+    </CascadingValue>
+</div>
+
+@code
+{
+    Subject SelectedSubject { get; set; } = new Subject();
+
+    void ReturnSubject(Subject sub)
+    {
+
+    }
+}
+

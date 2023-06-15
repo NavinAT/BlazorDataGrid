@@ -1,0 +1,21 @@
+﻿.datagrid 
+{
+    --datagrid-line-height: 1.5;
+    --datagrid-fieldvalue-padding: 0 0 0 6px;
+
+    --datagrid-header-font-size: var(--font-size-small);
+    --datagrid-header-font-weight: var(--font-weight);
+    --datagrid-header-text-color: var(--base-secondary-text-color);
+    --datagrid-header-text-align: left;
+
+    --datagrid-border-color: var(--border-color);
+    --datagrid-border-width: var(--border-width);
+    --datagrid-border-style: var(--border-style);
+
+    --datagrid-field-border-color: var(--base-color);
+    --datagrid-field-border-width: var(--border-width);
+    --datagrid-field-border-style: var(--border-style);
+
+    --datagrid-row-focus-color: var(--focus-color);
+    --datagrid-row-hover-color: var(--base-hover-color);
+}

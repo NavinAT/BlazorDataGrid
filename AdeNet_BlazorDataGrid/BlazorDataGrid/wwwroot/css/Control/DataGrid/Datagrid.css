@@ -1,0 +1,88 @@
+﻿/* Datagrid.css */
+.datagrid 
+{
+    line-height: var(--datagrid-line-height);
+
+    /* TODO: This can only happen if responsiveness strategy allows grids to exceed the container size */
+    overflow-x: auto;
+}
+
+.datagrid-table 
+{
+    border-spacing: 0;
+
+    /* TODO: Responsiveness strategy? */
+
+    /* HACK 1: Setting width 0 allows columns to have a calculated width without the requirement of a dynamic col definition (dead area) */
+    width: 0;
+
+    /* HACK 2: Setting height 0 allows cell content to have a 100% height (since height requires a parent to have a calculated, absolute height). */
+    height: 0;
+
+    table-layout: fixed;
+}
+
+.datagrid-table.dynamic-width 
+{
+    width: 100%;
+}
+
+.datagrid-header-cell,
+.datagrid-data-cell 
+{
+    padding: 0;
+
+    /* TODO: There are cells that are allowed to wrap but this would prevent virtualization */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.datagrid-header-cell 
+{
+    font-size: var(--datagrid-header-font-size);
+    font-weight: var(--datagrid-header-font-weight);
+    color: var(--datagrid-header-text-color);
+    text-align: var(--datagrid-header-align);
+}
+
+.datagrid-header-cell,
+.datagrid.readonly .datagrid-data-cell,
+.datagrid.editable .datagrid-data-row:last-child .datagrid-data-cell 
+{
+    border-bottom-color: var(--datagrid-border-color);
+    border-bottom-width: var(--datagrid-border-width);
+    border-bottom-style: var(--datagrid-border-style);
+}
+
+.datagrid.editable .datagrid-data-cell 
+{
+    border-color: var(--datagrid-field-border-color);
+    border-width: var(--datagrid-field-border-width);
+    border-style: var(--datagrid-field-border-style);
+}
+
+.datagrid .datagrid-fieldvalue 
+{
+    padding: var(--datagrid-fieldvalue-padding);
+}
+
+.datagrid-data-row .datagrid-field 
+{
+    border: none;
+    width: 100%;
+}
+
+.datagrid-data-row.focus,
+.datagrid-data-row.focus .datagrid-field 
+{
+    background-color: var(--datagrid-row-focus-color);
+}
+
+.datagrid-data-row:hover:not(.focus),
+.datagrid-data-row.hover:not(.focus),
+.datagrid-data-row:has(.datagrid-field:hover):not(.focus) .datagrid-field,
+.datagrid-data-row:hover:not(.focus) .datagrid-field,
+.datagrid-data-row.hover:not(.focus) .datagrid-field 
+{
+    background-color: var(--datagrid-row-hover-color);
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "NachName": "Bauer",
+    "VorName": "Friona",
+    "VersichertenNummer": "756.4963.6308.18",
+    "GeburtsDatum": "16.02.2001",
+    "TodesDatum": "-",
+    "Adresse": "Bluntschlisteig 12, 3000 Bern"
+  },
+  {
+    "NachName": "Dietz",
+    "VorName": "Yasmin",
+    "VersichertenNummer": "756.6146.9478.36",
+    "GeburtsDatum": "09.11.1970",
+    "TodesDatum": "-",
+    "Adresse": "Probsteistrasse 6, 8915 Hausen am Albis"
+  },
+  {
+    "NachName": "Fiedler",
+    "VorName": "Finja",
+    "VersichertenNummer": "756.3388.9887.33",
+    "GeburtsDatum": "30.09.1943",
+    "TodesDatum": "04.07.2012",
+    "Adresse": "Maria-Stadler-Weg 12, 8953 Dietikon"
+  },
+  {
+    "NachName": "Hansen",
+    "VorName": "Louis",
+    "VersichertenNummer": "756.6649.6960.95",
+    "GeburtsDatum": "05.02.2016",
+    "TodesDatum": "-",
+    "Adresse": "Hegiwandweg 1b, 4000 Basel"
+  },
+  {
+    "NachName": "Jung",
+    "VorName": "Emma",
+    "VersichertenNummer": "756.0615.7830.62",
+    "GeburtsDatum": "02.12.1987",
+    "TodesDatum": "-",
+    "Adresse": "Oetenbachgasse 15, 4665 Oftringen"
+  }
+]

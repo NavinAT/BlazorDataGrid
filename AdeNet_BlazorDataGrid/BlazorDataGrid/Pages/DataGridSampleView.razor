@@ -1,0 +1,47 @@
+﻿@page "/gridsample"
+@using BlazorDataGrid.Controls.DataGrids
+@using System.Text.Json
+
+<h1>Datagrid</h1>
+<br />
+<h2>Readonly (with fixed col)</h2>
+<DataGrid DataSource="@SubjectList" EditMode="R" DynamicWidth="false">
+    <DataGridColumn Caption="Nachname" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Vorname" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Versichertennummer" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Geburtsdatum" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Todesdatum" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Adresse" CellWidth="100"></DataGridColumn>
+</DataGrid>
+<br/>
+<h2>Readonly (with dynamic col)</h2>
+<DataGrid DataSource="@SubjectList" EditMode="R" DynamicWidth="true">
+    <DataGridColumn Caption="Nachname" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Vorname" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Versichertennummer" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Geburtsdatum" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Todesdatum" CellWidth="100"></DataGridColumn>
+    <DataGridColumn Caption="Adresse" CellWidth="100"></DataGridColumn>
+</DataGrid>
+<br />
+<h2>Editable</h2>
+<DataGrid DataSource="@SubjectList" EditMode="E" DynamicWidth="false">
+    <DataGridColumn Caption="Nachname" CellWidth="200"></DataGridColumn>
+    <DataGridColumn Caption="Vorname" CellWidth="200"></DataGridColumn>
+    <DataGridColumn Caption="Versichertennummer" CellWidth="200"></DataGridColumn>
+    <DataGridColumn Caption="Geburtsdatum" CellWidth="200"></DataGridColumn>
+    <DataGridColumn Caption="Todesdatum" CellWidth="200"></DataGridColumn>
+    <DataGridColumn Caption="Adresse" CellWidth="250"></DataGridColumn>
+</DataGrid>
+
+@code 
+{
+    public List<Subject>? SubjectList { get; set; }
+
+    protected override void OnInitialized()
+    {
+         string strJson = File.ReadAllText("JsonData/SubjectData.json");
+
+        this.SubjectList = JsonSerializer.Deserialize<List<Subject>>(strJson);
+    }
+} 

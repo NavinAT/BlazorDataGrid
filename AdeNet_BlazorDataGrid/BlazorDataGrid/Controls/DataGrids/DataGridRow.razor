@@ -1,0 +1,49 @@
+﻿
+@switch(this.EditMode)
+{
+    case "R":
+        <tr class="datagrid-data-row @_strRowSelectStyle" @onclick="RowSelect">
+            <td class="datagrid-data-cell">
+                <span class="fieldvalue datagrid-fieldvalue">@Value.NachName</span>
+            </td>
+            <td class="datagrid-data-cell">
+                <span class="fieldvalue datagrid-fieldvalue">@Value.VorName</span>
+            </td>
+            <td class="datagrid-data-cell">
+                <span class="fieldvalue datagrid-fieldvalue">@Value.VersichertenNummer</span>
+            </td>
+            <td class="datagrid-data-cell">
+                <span class="fieldvalue datagrid-fieldvalue">@Value.GeburtsDatum</span>
+            </td>
+            <td class="datagrid-data-cell">
+                <span class="fieldvalue datagrid-fieldvalue">@Value.TodesDatum</span>
+            </td>
+            <td class="datagrid-data-cell">
+                <span class="fieldvalue datagrid-fieldvalue">@Value.Adresse</span>
+            </td>
+        </tr>
+        break;
+    case "E":
+        <tr class="datagrid-data-row @_strRowSelectStyle" @onclick="RowSelect">
+            <td class="datagrid-data-cell">
+                <input class="field datagrid-field textbox" type="text" value="@Value.NachName">
+            </td>
+            <td class="datagrid-data-cell">
+                <input class="field datagrid-field textbox" type="text" value="@Value.VorName">
+            </td>
+            <td class="datagrid-data-cell">
+                <input class="field datagrid-field textbox" type="text" value="@Value.VersichertenNummer">
+            </td>
+            <td class="datagrid-data-cell">
+                <input class="field datagrid-field textbox" type="text" value="@Value.GeburtsDatum">
+            </td>
+            <td class="datagrid-data-cell">
+                <input class="field datagrid-field textbox" type="text" value="@Value.TodesDatum">
+            </td>
+            <td class="datagrid-data-cell">
+                <input class="field datagrid-field textbox" type="text" value="@Value.Adresse">
+            </td>
+        </tr>
+        break;
+}
+
